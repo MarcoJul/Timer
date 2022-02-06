@@ -1,13 +1,21 @@
 .outerBox {
   height: 50.9rem;
   width: 50.9rem;
-  background-color: #900a0a;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: -5px 14px 44px 0 #000;
   box-shadow: 5px -16px 50px 0 rgba(255, 255, 255, 0.15);
+}
+.started {
+  transition: background-color 1s;
+  background-color: #900a0a;
+}
+
+.stopped {
+  transition: background-color 1s;
+  background-color: #09a65a;
 }
 .innerBox {
   width: 50rem;
@@ -30,26 +38,49 @@
   justify-content: space-between;
 }
 
-.time {
+.time,
+.separator {
   color: #fff;
   font-family: "bebasneue", sans-serif;
   height: 19.6rem;
   font-size: 20rem;
   margin-top: 14rem;
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  display: inline-block;
 }
 
-.text {
+.time {
+  width: 16rem;
+}
+.minutes {
+  text-align: right;
+}
+.seconds {
+  text-align: left;
+}
+
+.button {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   letter-spacing: 0.6rem;
   text-transform: uppercase;
+  background-color: transparent;
+  border: none;
   font-size: 1.6rem;
   color: #fff;
   text-align: center;
+  cursor: pointer;
 }
 
 .settings {
-  color: #585858;
   margin-bottom: 5rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.resetIcon {
+  width: 3rem;
+  height: 3rem;
+  color: #585858;
 }
