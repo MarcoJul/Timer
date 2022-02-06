@@ -48,6 +48,10 @@
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: inline-block;
 }
+input {
+  background-color: transparent;
+  border: none;
+}
 
 .time {
   width: 16rem;
