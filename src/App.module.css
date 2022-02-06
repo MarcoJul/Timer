@@ -7,15 +7,16 @@
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  overflow: hidden;
 }
 
 .content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 100vw;
-  transform: translateX(50vw);
   transition: transform 1s;
+  width: 200vw;
+  transform: translateX(100vw);
 }
 
 .transformed {
@@ -23,7 +24,7 @@
 }
 
 .timer {
-  transform: translate(50%);
+  transform: translate(-50%);
 }
 
 .countdown {
@@ -33,6 +34,7 @@
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   letter-spacing: 0.6rem;
+  margin-right: -0.6rem;
   text-transform: uppercase;
   background-color: transparent;
   border: none;

@@ -8,8 +8,6 @@ import CountDown from "./component/CountDown";
 function App() {
   const [timer, setTimer] = useState(false);
 
-  let content = "timer";
-
   const toggleUse = () => {
     setTimer(() => !timer);
   };
@@ -17,7 +15,7 @@ function App() {
   return (
     <div className={classes.container}>
       <button className={classes.button} onClick={toggleUse}>
-        {!timer ? "timer" : "countdown"}
+        {!timer ? "countdown ->" : "<- timer"}
       </button>
       <div className={`${classes.content} ${timer ? classes.transformed : ""}`}>
         <div className={classes.timer}>
