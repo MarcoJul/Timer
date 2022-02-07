@@ -9,8 +9,8 @@ const CountDown = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(10);
   const [isEdit, setIsEdit] = useState(false);
-  const secondsInput = useRef("");
-  const minutesInput = useRef("");
+  const secondsInput = useRef();
+  const minutesInput = useRef();
 
   const toggleHandler = () => {
     setStarted(() => !started);
@@ -28,8 +28,8 @@ const CountDown = () => {
         if (seconds === 0 && minutes === 0) {
           alert("time is up!");
           setStarted(false);
-          setMinutes(15);
-          setSeconds(0);
+          setMinutes(minutesInput.current.value);
+          setSeconds(secondsInput.current.value);
           clearInterval(interval);
         }
       }, 1000);
@@ -37,7 +37,7 @@ const CountDown = () => {
       clearInterval(interval);
     }
     return () => clearInterval(interval);
-  }, [started, seconds]);
+  }, [started, minutes, seconds]);
 
   const editHandler = () => {
     setStarted(false);
@@ -46,6 +46,8 @@ const CountDown = () => {
 
   const checkHandler = () => {
     setIsEdit(false);
+    setMinutes(minutesInput.current.value);
+    setSeconds(secondsInput.current.value);
   };
 
   return (
@@ -58,10 +60,11 @@ const CountDown = () => {
         <div className={classes.actions}>
           <div>
             {isEdit ? (
-              <Fragment>
+              <form onSubmit={checkHandler}>
                 <input
                   type="text"
-                  className={classes.time}
+                  maxLength="2"
+                  className={`${classes.time} ${classes.minutes}`}
                   ref={minutesInput}
                   placeholder="00"
                 />
@@ -69,10 +72,11 @@ const CountDown = () => {
                 <input
                   type="text"
                   className={classes.time}
+                  maxLength="2"
                   ref={secondsInput}
                   placeholder="00"
                 />
-              </Fragment>
+              </form>
             ) : (
               <Fragment>
                 <p className={`${classes.time} ${classes.minutes}`}>
