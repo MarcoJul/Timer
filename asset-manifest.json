@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/Timer-React/static/css/main.70e379a2.css",
+    "main.js": "/Timer-React/static/js/main.94964a0e.js",
+    "static/js/787.8e9e615b.chunk.js": "/Timer-React/static/js/787.8e9e615b.chunk.js",
+    "static/media/bebasneue-book-webfont.woff": "/Timer-React/static/media/bebasneue-book-webfont.ef7181612dcffaf529b4.woff",
+    "static/media/gear.svg": "/Timer-React/static/media/gear.dfd0aad57883862080c0652c06428eb5.svg",
+    "static/media/check.svg": "/Timer-React/static/media/check.3c0a63a690888e0beda345bb531097f5.svg",
+    "index.html": "/Timer-React/index.html",
+    "main.70e379a2.css.map": "/Timer-React/static/css/main.70e379a2.css.map",
+    "main.94964a0e.js.map": "/Timer-React/static/js/main.94964a0e.js.map",
+    "787.8e9e615b.chunk.js.map": "/Timer-React/static/js/787.8e9e615b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.70e379a2.css",
+    "static/js/main.94964a0e.js"
+  ]
+}
