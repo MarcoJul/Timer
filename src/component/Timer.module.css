@@ -89,3 +89,7 @@ input {
   height: 3rem;
   color: #585858;
 }
+
+.button:disabled {
+  cursor: not-allowed;
+}

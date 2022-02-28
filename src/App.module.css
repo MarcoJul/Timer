@@ -43,3 +43,14 @@
   text-align: center;
   cursor: pointer;
 }
+
+.swipe {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.icon {
+  width: 2.5rem;
+}

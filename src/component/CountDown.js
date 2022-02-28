@@ -7,8 +7,9 @@ import classes from "./Timer.module.css";
 const CountDown = () => {
   const [started, setStarted] = useState(false);
   const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(10);
+  const [seconds, setSeconds] = useState(5);
   const [isEdit, setIsEdit] = useState(false);
+  const [lastEdit, setLastEdit] = useState({ minutes: 0, seconds: 5 });
   const secondsInput = useRef();
   const minutesInput = useRef();
 
@@ -28,8 +29,8 @@ const CountDown = () => {
         if (seconds === 0 && minutes === 0) {
           alert("time is up!");
           setStarted(false);
-          setMinutes(minutesInput.current.value);
-          setSeconds(secondsInput.current.value);
+          setMinutes(lastEdit.minutes);
+          setSeconds(lastEdit.seconds);
           clearInterval(interval);
         }
       }, 1000);
@@ -46,9 +47,16 @@ const CountDown = () => {
 
   const checkHandler = () => {
     setIsEdit(false);
-    setMinutes(minutesInput.current.value);
-    setSeconds(secondsInput.current.value);
+    setMinutes(minutesInput.current.value ? +minutesInput.current.value : 0);
+    setSeconds(secondsInput.current.value ? +secondsInput.current.value : 0);
+    setLastEdit({
+      minutes: +minutesInput.current.value,
+      seconds: +secondsInput.current.value,
+    });
   };
+
+  console.log("seconds", seconds);
+  console.log("minutes", minutes);
 
   return (
     <div
@@ -89,7 +97,11 @@ const CountDown = () => {
               </Fragment>
             )}
           </div>
-          <button className={classes.button} onClick={toggleHandler}>
+          <button
+            disabled={isEdit}
+            className={classes.button}
+            onClick={toggleHandler}
+          >
             {started ? "stop" : "start"}
           </button>
           <button
